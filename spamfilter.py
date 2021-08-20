@@ -19,7 +19,7 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import accuracy_score
 
 #importing smsspam dataset
-data = pd.read_csv('smsspam.csv',sep='\t',names=['label','message'])
+data = pd.read_csv('spam.csv',sep='\t',names=['label','message'])
 
 #data cleaning and pre-processing
 data['label']=data['label'].map({'ham':0,'spam':1})
@@ -50,7 +50,7 @@ spam_svm.fit(X_train, y_train)
 y_pred_spam_svm = spam_svm.predict(X_test)
 
 #different test score after training with svm classifier
-svm.score(X_test, y_test)
+spam_svm.score(X_test, y_test)
 f1_svm = f1_score(y_test,y_pred_spam_svm)
 confusion_svm = confusion_matrix(y_test,y_pred_spam_svm)
 accuracy_svm = accuracy_score(y_test,y_pred_spam_svm)
@@ -58,7 +58,7 @@ accuracy_svm = accuracy_score(y_test,y_pred_spam_svm)
 #training with logistic regression classifier
 lreg = LogisticRegression()
 lreg.fit(X_train,y_train)
-y_pred_spam_lreg = spam_lreg.predict(X_test)
+y_pred_spam_lreg = lreg.predict(X_test)
 
 #test score after training with logistic regression classifier
 lreg.score(X_test,y_test)
@@ -69,7 +69,7 @@ accuracy_lreg = accuracy_score(y_test,y_pred_spam_lreg)
 #training with naive bayes classifier
 nb = MultinomialNB()
 nb.fit(X_train,y_train)
-y_pred_spam_nb = spam_nb.predict(X_test)
+y_pred_spam_nb = nb.predict(X_test)
 
 #test score after training with naive bayes classifier
 nb.score(X_test,y_test)
@@ -90,10 +90,45 @@ y_pred_spam_nn = np.zeros(len(pred))
 for i in range(len(pred)):
   y_pred_spam_nn[i]=np.argmax(pred[i])
 
-model.score(X_test,y_test)
 f1_nn = f1_score(y_test,y_pred_spam_nn)
 confusion_nn = confusion_matrix(y_test,y_pred_spam_nn)
 accuracy_nn = accuracy_score(y_test,y_pred_spam_nn)
+
+print(" ")
+
+print("SVM")
+print("========================")
+print(spam_svm.score(X_test, y_test))
+print('f1 = ',f1_svm)
+print('Confusion matrix = ',confusion_svm)
+print('Accuracy score = ',accuracy_svm)
+
+print(" ")
+
+print("Logistic Regression")
+print("========================")
+print(lreg.score(X_test, y_test))
+print('f1 = ',f1_lreg)
+print('Confusion matrix = ',confusion_lreg)
+print('Accuracy score = ',accuracy_lreg)
+
+print("")
+
+print("Naive Bayes")
+print("========================")
+print(nb.score(X_test, y_test))
+print('f1 = ',f1_nb)
+print('Confusion matrix = ',confusion_nb)
+print('Accuracy score = ',accuracy_nb)
+
+print(" ")
+
+print("Neural network")
+print("========================")
+print('f1 = ',f1_nn)
+print('Confusion matrix = ',confusion_nn)
+print('Accuracy score = ',accuracy_nn)
+
 
 
 
