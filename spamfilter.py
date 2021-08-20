@@ -77,8 +77,23 @@ f1_nb = f1_score(y_test,y_pred_spam_nb)
 confusion_nb = confusion_matrix(y_test,y_pred_spam_nb)
 accuracy_nb = accuracy_score(y_test,y_pred_spam_nb)
 
+#training with neural network
+model = tf.keras.Sequential([tf.keras.layers.Dense(10,activation='relu'),tf.keras.layers.Dense(10,activation='relu'),tf.keras.layers.Dense(2)])
+model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
+model.fit(X_train,y_train,batch_size=1,epochs=5)
 
+#test score after training with neural network
+test_loss,test_acc = model.evaluate(X_test,y_test,verbose=2,batch_size=1)
+probability_model = keras.Sequential([model,keras.layers.Softmax()])
+pred = probability_model.predict(X_test)
+y_pred_spam_nn = np.zeros(len(pred))
+for i in range(len(pred)):
+  y_pred_spam_nn[i]=np.argmax(pred[i])
 
+model.score(X_test,y_test)
+f1_nn = f1_score(y_test,y_pred_spam_nn)
+confusion_nn = confusion_matrix(y_test,y_pred_spam_nn)
+accuracy_nn = accuracy_score(y_test,y_pred_spam_nn)
 
 
 
