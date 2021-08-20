@@ -8,7 +8,7 @@
    - [Credits](#credits)
 
 ### Overview
-This is a simple spam classifier example based on Natural Language Processing in Python.
+This is a simple sms spam classifier example based on Natural Language Processing in Python. It is implemented using simple bag-of-words model which predicts whether a message is legitimate(ham) or spam.
 ### Motivation
 In present day of modern technology, the ratio of spam reports is increasig day by day. That's why I thought it can be a good start to get my hands dirty on this problem using ML and DL techniques.  
 ### Format
