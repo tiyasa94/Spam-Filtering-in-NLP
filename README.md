@@ -12,7 +12,7 @@ This is a simple sms spam classifier example based on Natural Language Processin
 ### Motivation
 In present day of modern technology, the ratio of spam reports is increasig day by day. That's why I thought it can be a good start to get my hands dirty on this problem using ML and DL techniques.  
 ### Format
-The SMS Spam Collection (text file: smsspam) has a total of 5,574 messages among of which 4,827 are SMS legitimate messages (86.6%) and 747 are spam messages(13.4%). The files contain one message per line. Each line is composed by two columns: one with label (ham or spam) and other with the raw text. ![download (1)](https://user-images.githubusercontent.com/74978788/130245939-911201d5-d4bc-4fcd-8404-1723490f3f80.png)
+The SMS Spam Collection (text file: smsspam) has a total of 5,574 messages among which 4,827 are SMS legitimate messages (86.6%) and 747 are spam messages(13.4%). The files contain one message per line. Each line is composed by two columns: one with label (ham or spam) and other with the raw text. ![download (1)](https://user-images.githubusercontent.com/74978788/130245939-911201d5-d4bc-4fcd-8404-1723490f3f80.png)
 
 ### Technical Aspect
 This project is divided into three parts:
