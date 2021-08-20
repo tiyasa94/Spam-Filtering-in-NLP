@@ -6,8 +6,7 @@
    - [Technical Aspect](#technical-aspect)
    - [Technologies Used](#technologies-used)
    - [Credits](#credits)
-### Demo
-![download (1)](https://user-images.githubusercontent.com/74978788/130198799-5a6d15b7-9625-4fd2-8bff-24f3d5ef44a5.png)
+
 ### Overview
 This is a simple spam classifier example based on Natural Language Processing in Python.
 ### Motivation
