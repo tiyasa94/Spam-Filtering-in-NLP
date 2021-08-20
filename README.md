@@ -21,5 +21,5 @@ This project is divided into three parts:
 2. Training various machine learning and deep learning models.
 3. Comparing the accuracy of different models on the test data.
 ### Installation
-The Code is written in Python 3.9. If you don't have Python installed you can find it here. If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after cloning the repository:
-[pip install -r requirements.txt](pip install -r requirements.txt)
+The Code is written in Python 3.9. If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. 
+
